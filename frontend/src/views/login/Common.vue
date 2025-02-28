@@ -49,7 +49,8 @@ export default {
     height: 100vh;
     overflow: auto;
     background: url(../../../static/img/work-4997565_1280.png) no-repeat center ;
-    background-color: rgb(214, 224, 252);
+    //background-color: white;
+    background-color: rgb(247, 247, 249);
     //background-color: #b6daf5;
     .content {
       padding: 32px 0;

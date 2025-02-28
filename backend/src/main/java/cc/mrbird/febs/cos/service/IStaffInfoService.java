@@ -34,7 +34,7 @@ public interface IStaffInfoService extends IService<StaffInfo> {
     /**
      * 查询员工信息
      *
-     * @param enterpriseId 企业id
+     * @param enterpriseId 校企id
      * @return 结果
      */
     List<LinkedHashMap<String, Object>> selectStaffList(Integer enterpriseId);
@@ -42,7 +42,7 @@ public interface IStaffInfoService extends IService<StaffInfo> {
     /**
      * 获取员工列表
      *
-     * @param enterpriseId 企业ID
+     * @param enterpriseId 校企ID
      * @return 结果
      */
     List<LinkedHashMap<String, Object>> queryStaffListByStaff(Integer enterpriseId, Integer userId);

@@ -83,7 +83,7 @@ public class AgentInfoController {
     /**
      * 主页数据
      *
-     * @param enterpriseId 企业ID
+     * @param enterpriseId 校企ID
      * @return 结果
      */
     @GetMapping("/homeData")

@@ -64,7 +64,7 @@ public class LeaveInfo implements Serializable {
     private Integer auditId;
 
     /**
-     * 所属企业
+     * 所属校企
      */
     private Integer enterpriseId;
 

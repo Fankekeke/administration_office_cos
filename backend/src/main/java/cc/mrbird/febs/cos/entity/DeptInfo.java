@@ -51,7 +51,7 @@ public class DeptInfo implements Serializable {
     private String createBy;
 
     /**
-     * 所属企业
+     * 所属校企
      */
     private Integer enterpriseId;
 

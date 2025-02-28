@@ -108,7 +108,7 @@ public class StaffInfo implements Serializable {
     private Integer userId;
 
     /**
-     * 所属企业
+     * 所属校企
      */
     private Integer enterpriseId;
 

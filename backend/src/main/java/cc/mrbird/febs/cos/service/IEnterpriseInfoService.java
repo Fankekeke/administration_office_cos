@@ -11,24 +11,24 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
- * 企业信息管理 service层
+ * 校企信息管理 service层
  *
  * @author FanK
  */
 public interface IEnterpriseInfoService extends IService<EnterpriseInfo> {
 
     /**
-     * 分页获取企业信息信息
+     * 分页获取校企信息信息
      *
      * @param page           分页对象
-     * @param enterpriseInfo 企业信息信息
+     * @param enterpriseInfo 校企信息信息
      * @return 结果
      */
     IPage<LinkedHashMap<String, Object>> selectEnterprisePage(Page<EnterpriseInfo> page, EnterpriseInfo enterpriseInfo);
 
 
     /**
-     * 导入企业信息列表
+     * 导入校企信息列表
      *
      * @param file 文件
      * @return 结果

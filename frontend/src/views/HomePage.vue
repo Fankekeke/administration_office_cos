@@ -18,18 +18,18 @@
             <a-row class="more-info" v-if="user.roleId == 74">
               <a-col :span="4"></a-col>
               <a-col :span="4"></a-col>
-              <a-col :span="4">
-                <head-info title="总订单" :content="titleData.registerNum" :center="false" :bordered="false"/>
-              </a-col>
-              <a-col :span="4">
-                <head-info title="总收益" :content="titleData.orderPrice" :center="false" :bordered="false"/>
-              </a-col>
-              <a-col :span="4">
-                <head-info title="出库数量" :content="titleData.outNum" :center="false" :bordered="false"/>
-              </a-col>
-              <a-col :span="4">
-                <head-info title="入库数量" :content="titleData.putNum" :center="false"/>
-              </a-col>
+<!--              <a-col :span="4">-->
+<!--                <head-info title="总订单" :content="titleData.registerNum" :center="false" :bordered="false"/>-->
+<!--              </a-col>-->
+<!--              <a-col :span="4">-->
+<!--                <head-info title="总收益" :content="titleData.orderPrice" :center="false" :bordered="false"/>-->
+<!--              </a-col>-->
+<!--              <a-col :span="4">-->
+<!--                <head-info title="出库数量" :content="titleData.outNum" :center="false" :bordered="false"/>-->
+<!--              </a-col>-->
+<!--              <a-col :span="4">-->
+<!--                <head-info title="入库数量" :content="titleData.putNum" :center="false"/>-->
+<!--              </a-col>-->
             </a-row>
           </div>
         </a-col>

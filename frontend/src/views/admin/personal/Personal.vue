@@ -1,7 +1,7 @@
 <template>
   <a-row :gutter="20">
     <a-col :span="8" style="text-align: center;padding-top: 50px">
-      <i style="font-size: 30px;text-align: center;">企业信息</i>
+      <i style="font-size: 30px;text-align: center;">校企信息</i>
       <img alt="example" style="height: 500px;" src="/static/img/data.png"/>
     </a-col>
     <a-col :span="16">
@@ -9,7 +9,7 @@
         <a-form :form="form" layout="vertical">
           <a-row :gutter="20">
             <a-col :span="8">
-              <a-form-item label='企业名称' v-bind="formItemLayout">
+              <a-form-item label='校企名称' v-bind="formItemLayout">
                 <a-input v-decorator="[
             'name',
             { rules: [{ required: true, message: '请输入名称!' }] }
@@ -39,7 +39,7 @@
               </a-form-item>
             </a-col>
             <a-col :span="8">
-              <a-form-item label='二级企业单位性质' v-bind="formItemLayout">
+              <a-form-item label='二级校企单位性质' v-bind="formItemLayout">
                 <a-input v-decorator="[
             'natureTwo'
             ]"/>
@@ -144,7 +144,7 @@
               </a-form-item>
             </a-col>
             <a-col :span="8">
-              <a-form-item label='英文企业名称' v-bind="formItemLayout">
+              <a-form-item label='英文校企名称' v-bind="formItemLayout">
                 <a-input v-decorator="[
             'enName'
             ]"/>
@@ -165,7 +165,7 @@
               </a-form-item>
             </a-col>
             <a-col :span="24">
-              <a-form-item label='企业照片' v-bind="formItemLayout">
+              <a-form-item label='校企照片' v-bind="formItemLayout">
                 <a-upload
                   name="avatar"
                   action="http://127.0.0.1:9527/file/fileUpload/"

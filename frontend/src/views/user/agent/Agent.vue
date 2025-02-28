@@ -153,7 +153,7 @@ export default {
         ellipsis: true,
         dataIndex: 'positionName'
       }, {
-        title: '所属公司',
+        title: '所属校企',
         ellipsis: true,
         dataIndex: 'enterpriseName'
       }, {

@@ -72,7 +72,7 @@ public class FinanceInfo implements Serializable {
     private String staffName;
 
     /**
-     * 所属企业
+     * 所属校企
      */
     private Integer enterpriseId;
 

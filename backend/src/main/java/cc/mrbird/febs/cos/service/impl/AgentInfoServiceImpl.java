@@ -56,7 +56,7 @@ public class AgentInfoServiceImpl extends ServiceImpl<AgentInfoMapper, AgentInfo
     /**
      * 主页数据
      *
-     * @param enterpriseId 企业ID
+     * @param enterpriseId 校企ID
      * @return 结果
      */
     @Override

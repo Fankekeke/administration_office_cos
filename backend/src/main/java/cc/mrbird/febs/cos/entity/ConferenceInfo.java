@@ -71,7 +71,7 @@ public class ConferenceInfo implements Serializable {
     private String createDate;
 
     /**
-     * 所属企业
+     * 所属校企
      */
     private Integer enterpriseId;
 

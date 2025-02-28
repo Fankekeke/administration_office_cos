@@ -150,7 +150,7 @@ export default {
           return <a-tag>{{ text }}</a-tag>
         }
       }, {
-        title: '所属企业',
+        title: '所属校企',
         dataIndex: 'enterpriseName',
         ellipsis: true,
         customRender: (text, row, index) => {

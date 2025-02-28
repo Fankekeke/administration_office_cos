@@ -143,7 +143,7 @@ export default {
           </a-popover>
         }
       }, {
-        title: '所属公司',
+        title: '所属校企',
         ellipsis: true,
         dataIndex: 'enterpriseName'
       }, {
