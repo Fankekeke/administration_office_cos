@@ -58,6 +58,7 @@ public class FileInfo implements Serializable {
      * 创建时间
      */
     private String createDate;
+    private String fileKey;
 
     /**
      * 所属校企

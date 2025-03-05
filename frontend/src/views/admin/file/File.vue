@@ -7,18 +7,10 @@
           <div :class="advanced ? null: 'fold'">
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="文档标题"
+                label="发文名称"
                 :labelCol="{span: 5}"
                 :wrapperCol="{span: 18, offset: 1}">
-                <a-input v-model="queryParams.taskTitle"/>
-              </a-form-item>
-            </a-col>
-            <a-col :md="6" :sm="24">
-              <a-form-item
-                label="所属用户"
-                :labelCol="{span: 5}"
-                :wrapperCol="{span: 18, offset: 1}">
-                <a-input v-model="queryParams.staffName"/>
+                <a-input v-model="queryParams.name"/>
               </a-form-item>
             </a-col>
           </div>
@@ -128,15 +120,15 @@ export default {
     }),
     columns () {
       return [{
-        title: '文件编号',
+        title: '发文号',
         ellipsis: true,
         dataIndex: 'code'
       }, {
-        title: '文件名称',
+        title: '发文名称',
         ellipsis: true,
         dataIndex: 'name'
       }, {
-        title: '备注',
+        title: '文件内容',
         ellipsis: true,
         dataIndex: 'content'
       }, {
@@ -144,7 +136,7 @@ export default {
         ellipsis: true,
         dataIndex: 'createBy'
       }, {
-        title: '状态',
+        title: '文件特性',
         dataIndex: 'status',
         customRender: (text, row, index) => {
           return <a-tag>{{ text }}</a-tag>
@@ -161,7 +153,18 @@ export default {
           }
         }
       }, {
-        title: '创建时间',
+        title: '文件关键字',
+        dataIndex: 'fileKey',
+        ellipsis: true,
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '发文时间',
         dataIndex: 'createDate',
         ellipsis: true,
         customRender: (text, row, index) => {

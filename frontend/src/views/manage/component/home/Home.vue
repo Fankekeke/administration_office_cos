@@ -31,7 +31,7 @@
             <a-col :span="6">
               <a-card hoverable>
                 <a-row>
-                  <a-col :span="24" style="font-size: 13px;margin-bottom: 8px;font-family: SimHei">本年订单量</a-col>
+                  <a-col :span="24" style="font-size: 13px;margin-bottom: 8px;font-family: SimHei">本年任务量</a-col>
                   <a-col :span="4"><a-icon type="arrow-up" style="font-size: 30px;margin-top: 3px"/></a-col>
                   <a-col :span="18" style="font-size: 28px;font-weight: 500;font-family: SimHei">
                     {{ titleData.orderNumYear }}
@@ -125,7 +125,7 @@ export default {
       },
       loading: false,
       series: [{
-        name: '收益',
+        name: '单量',
         data: []
       }],
       chartOptions: {
@@ -143,7 +143,7 @@ export default {
           enabled: false
         },
         title: {
-          text: '近十天内出库收益统计',
+          text: '近十天内完成工单统计',
           align: 'left'
         },
         markers: {
@@ -153,7 +153,7 @@ export default {
         }
       },
       series1: [{
-        name: '收益',
+        name: '单量',
         data: []
       }],
       chartOptions1: {
@@ -199,7 +199,7 @@ export default {
         }
       },
       series2: [{
-        name: '收益',
+        name: '单量',
         data: []
       }],
       chartOptions2: {
@@ -227,7 +227,7 @@ export default {
         }
       },
       series3: [{
-        name: '收益',
+        name: '单量',
         data: []
       }],
       chartOptions3: {
@@ -236,7 +236,7 @@ export default {
           height: 300
         },
         title: {
-          text: '近十天内入库收益统计',
+          text: '近十天内入库单量统计',
           align: 'left'
         },
         plotOptions: {

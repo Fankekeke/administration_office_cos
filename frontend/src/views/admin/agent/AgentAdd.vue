@@ -19,6 +19,17 @@
           </a-form-item>
         </a-col>
         <a-col :span="24">
+          <a-form-item label='事务类型' v-bind="formItemLayout">
+            <a-select v-decorator="[
+              'type',
+              { rules: [{ required: true, message: '请输入事务类型!' }] }
+              ]">
+              <a-select-option value="1">近期事务</a-select-option>
+              <a-select-option value="2">长期事务</a-select-option>
+            </a-select>
+          </a-form-item>
+        </a-col>
+        <a-col :span="24">
           <a-form-item label='指派员工' v-bind="formItemLayout">
             <a-select style="width: 100%" v-decorator="[
             'staffId',

@@ -11,18 +11,18 @@
     <a-form :form="form" layout="vertical">
       <a-row :gutter="20">
         <a-col :span="12">
-          <a-form-item label='文件标题' v-bind="formItemLayout">
+          <a-form-item label='发文名称' v-bind="formItemLayout">
             <a-input v-decorator="[
             'name',
-            { rules: [{ required: true, message: '请输入文件名称!' }] }
+            { rules: [{ required: true, message: '请输入发文名称!' }] }
             ]"/>
           </a-form-item>
         </a-col>
         <a-col :span="12">
-          <a-form-item label='状态' v-bind="formItemLayout">
+          <a-form-item label='文件特性' v-bind="formItemLayout">
             <a-select v-decorator="[
               'status',
-              { rules: [{ required: true, message: '请输入员工性别!' }] }
+              { rules: [{ required: true, message: '请输入文件特性!' }] }
               ]">
             <a-select-option value="轻">轻</a-select-option>
             <a-select-option value="重">重</a-select-option>
@@ -33,18 +33,26 @@
           </a-form-item>
         </a-col>
         <a-col :span="12">
-          <a-form-item label='来源' v-bind="formItemLayout">
+          <a-form-item label='文件来源' v-bind="formItemLayout">
             <a-input v-decorator="[
             'createBy',
-            { rules: [{ required: true, message: '请输入来源!' }] }
+            { rules: [{ required: true, message: '请输入文件来源!' }] }
+            ]"/>
+          </a-form-item>
+        </a-col>
+        <a-col :span="12">
+          <a-form-item label='文件关键字' v-bind="formItemLayout">
+            <a-input v-decorator="[
+            'fileKey',
+            { rules: [{ required: true, message: '请输入文件关键字!' }] }
             ]"/>
           </a-form-item>
         </a-col>
         <a-col :span="24">
-          <a-form-item label='文档备注' v-bind="formItemLayout">
+          <a-form-item label='文件内容' v-bind="formItemLayout">
             <a-textarea :rows="6" v-decorator="[
             'content',
-             { rules: [{ required: true, message: '请输入文档备注!' }] }
+             { rules: [{ required: true, message: '请输入文件内容!' }] }
             ]"/>
           </a-form-item>
         </a-col>

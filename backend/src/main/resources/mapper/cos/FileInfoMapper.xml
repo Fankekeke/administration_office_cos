@@ -13,6 +13,7 @@
        	ci.images,
        	ci.create_by,
        	ci.create_date,
+       	ci.file_key,
         ei.name as enterpriseName,
         ei.images as enterpriseImages
         from

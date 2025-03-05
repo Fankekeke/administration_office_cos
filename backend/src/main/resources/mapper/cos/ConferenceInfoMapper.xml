@@ -13,6 +13,8 @@
         ci.images,
         ci.start_time,
         ci.end_time,
+        ci.organizer,
+        ci.status,
         ci.staff_ids,
         ci.create_date,
         si.code as staffCode,

@@ -10,6 +10,7 @@
         ai.task_title,
         ai.content,
         ai.status,
+        ai.type,
         ai.create_date,
         ai.complate_date,
         si.code as staffCode,

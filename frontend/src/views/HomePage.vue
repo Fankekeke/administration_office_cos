@@ -22,7 +22,7 @@
 <!--                <head-info title="总订单" :content="titleData.registerNum" :center="false" :bordered="false"/>-->
 <!--              </a-col>-->
 <!--              <a-col :span="4">-->
-<!--                <head-info title="总收益" :content="titleData.orderPrice" :center="false" :bordered="false"/>-->
+<!--                <head-info title="总单量" :content="titleData.orderPrice" :center="false" :bordered="false"/>-->
 <!--              </a-col>-->
 <!--              <a-col :span="4">-->
 <!--                <head-info title="出库数量" :content="titleData.outNum" :center="false" :bordered="false"/>-->
@@ -101,6 +101,7 @@ export default {
       userDept: '',
       lastLoginTime: '',
       welcomeMessage: '',
+      notifyList: [],
       bulletinList: []
     }
   },
@@ -123,9 +124,49 @@ export default {
     setTitleData (titleData) {
       this.titleData = titleData
       console.log(this.titleData)
+    },
+    queryNotifyByUser () {
+      if (this.user.roleId == 75) {
+        this.$get('/cos/notify-info/queryNotifyByUser', {userId: this.user.userId}).then((r) => {
+          this.notifyList = r.data.data
+          this.notifyList.forEach((item, index) => {
+            this.openNotification(item)
+          })
+        })
+      }
+    },
+    notificationClose (key, id) {
+      this.$notification.close(key)
+      this.$get('/cos/notify-info/updateNotifyStatus', {id}).then((r) => {
+      })
+    },
+    openNotification (item) {
+      const key = `open${item.id}`
+      this.$notification.open({
+        message: '消息通知',
+        description: item.content,
+        btn: h => {
+          return h(
+            'a-button',
+            {
+              props: {
+                type: 'primary',
+                size: 'small'
+              },
+              on: {
+                click: () => this.notificationClose(key, item.id)
+              }
+            },
+            '确认'
+          )
+        },
+        key,
+        onClose: close
+      })
     }
   },
   mounted () {
+    this.queryNotifyByUser()
     this.welcomeMessage = this.welcome()
     this.$get(`index/${this.user.username}`).then((r) => {
       let data = r.data.data

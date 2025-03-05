@@ -4,6 +4,7 @@ package cc.mrbird.febs.cos.controller;
 import cc.mrbird.febs.common.utils.R;
 import cc.mrbird.febs.cos.entity.NotifyInfo;
 import cc.mrbird.febs.cos.service.INotifyInfoService;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,17 @@ public class NotifyInfoController {
     @GetMapping("/page")
     public R page(Page<NotifyInfo> page, NotifyInfo notifyInfo) {
         return R.ok(notifyInfoService.queryNotifyPage(page, notifyInfo));
+    }
+
+    /**
+     * 获取消息通知信息列表
+     *
+     * @param userId 用户ID
+     * @return 结果
+     */
+    @GetMapping("/queryNotifyByUser")
+    public R queryNotifyByUser(Integer userId) {
+        return R.ok(notifyInfoService.queryNotifyByUser(userId));
     }
 
     /**
@@ -74,6 +86,17 @@ public class NotifyInfoController {
     @PutMapping
     public R edit(NotifyInfo notifyInfo) {
         return R.ok(notifyInfoService.updateById(notifyInfo));
+    }
+
+    /**
+     * 修改消息通知状态
+     *
+     * @param id id
+     * @return 结果
+     */
+    @GetMapping("/updateNotifyStatus")
+    public R updateNotifyStatus(Integer id) {
+        return R.ok(notifyInfoService.update(Wrappers.<NotifyInfo>lambdaUpdate().set(NotifyInfo::getDelFlag, "1").eq(NotifyInfo::getId, id)));
     }
 
     /**

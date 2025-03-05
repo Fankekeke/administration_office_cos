@@ -153,11 +153,25 @@ export default {
         ellipsis: true,
         dataIndex: 'positionName'
       }, {
+        title: '事务类型',
+        dataIndex: 'type',
+        customRender: (text, row, index) => {
+          switch (text) {
+            case '1':
+              return <a-tag color="#2db7f5">近期事务</a-tag>
+            case '2':
+              return <a-tag color="#108ee9">长期事务</a-tag>
+            default:
+              return '- -'
+          }
+        }
+      }, {
         title: '所属校企',
         ellipsis: true,
         dataIndex: 'enterpriseName'
       }, {
         title: '待办标题',
+        ellipsis: true,
         dataIndex: 'taskTitle'
       }, {
         title: '待办内容',

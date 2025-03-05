@@ -10,21 +10,69 @@
     </template>
     <a-form :form="form" layout="vertical">
       <a-row :gutter="20">
-        <a-col :span="24">
-          <a-form-item label='代办标题' v-bind="formItemLayout">
+        <a-col :span="12">
+          <a-form-item label='发文名称' v-bind="formItemLayout">
             <a-input v-decorator="[
-            'taskTitle',
-            { rules: [{ required: true, message: '请输入代办标题!' }] }
+            'name',
+            { rules: [{ required: true, message: '请输入发文名称!' }] }
+            ]"/>
+          </a-form-item>
+        </a-col>
+        <a-col :span="12">
+          <a-form-item label='文件特性' v-bind="formItemLayout">
+            <a-select v-decorator="[
+              'status',
+              { rules: [{ required: true, message: '请输入文件特性!' }] }
+              ]">
+              <a-select-option value="轻">轻</a-select-option>
+              <a-select-option value="重">重</a-select-option>
+              <a-select-option value="缓">缓</a-select-option>
+              <a-select-option value="急">急</a-select-option>
+              <a-select-option value="一般">一般</a-select-option>
+            </a-select>
+          </a-form-item>
+        </a-col>
+        <a-col :span="12">
+          <a-form-item label='文件来源' v-bind="formItemLayout">
+            <a-input v-decorator="[
+            'createBy',
+            { rules: [{ required: true, message: '请输入文件来源!' }] }
+            ]"/>
+          </a-form-item>
+        </a-col>
+        <a-col :span="12">
+          <a-form-item label='文件关键字' v-bind="formItemLayout">
+            <a-input v-decorator="[
+            'fileKey',
+            { rules: [{ required: true, message: '请输入文件关键字!' }] }
             ]"/>
           </a-form-item>
         </a-col>
         <a-col :span="24">
-          <a-form-item label='文档内容' v-bind="formItemLayout">
+          <a-form-item label='文件内容' v-bind="formItemLayout">
             <a-textarea :rows="6" v-decorator="[
             'content',
-             { rules: [{ required: true, message: '请输入文档内容!' }] }
+             { rules: [{ required: true, message: '请输入文件内容!' }] }
             ]"/>
           </a-form-item>
+        </a-col>
+        <a-col :span="24">
+          <a-upload-dragger
+            name="avatar"
+            :multiple="true"
+            action="http://127.0.0.1:9527/file/fileUpload/"
+            @change="handleChange"
+          >
+            <p class="ant-upload-drag-icon">
+              <a-icon type="inbox" />
+            </p>
+            <p class="ant-upload-text">
+              Click or drag file to this area to upload
+            </p>
+            <p class="ant-upload-hint">
+              只支持单次上传.
+            </p>
+          </a-upload-dragger>
         </a-col>
       </a-row>
     </a-form>
@@ -100,7 +148,7 @@ export default {
     },
     setFormValues ({...bulletin}) {
       this.rowId = bulletin.id
-      let fields = ['taskTitle', 'content', 'uploader']
+      let fields = ['taskTitle', 'content', 'uploader', 'fileKey']
       let obj = {}
       Object.keys(bulletin).forEach((key) => {
         if (key === 'images') {

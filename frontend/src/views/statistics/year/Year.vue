@@ -32,7 +32,7 @@
             <a-col :span="12" style="margin-top: 70px">
               <a-card hoverable>
                 <a-row>
-                  <a-col :span="24" style="font-size: 13px;margin-bottom: 8px;font-family: SimHei">本年订单量</a-col>
+                  <a-col :span="24" style="font-size: 13px;margin-bottom: 8px;font-family: SimHei">本年任务量</a-col>
                   <a-col :span="4"><a-icon type="arrow-up" style="font-size: 30px;margin-top: 3px"/></a-col>
                   <a-col :span="18" style="font-size: 28px;font-weight: 500;font-family: SimHei">
                     {{ titleData.orderNum }}
@@ -44,7 +44,7 @@
             <a-col :span="12" style="margin-top: 70px">
               <a-card hoverable>
                 <a-row>
-                  <a-col :span="24" style="font-size: 13px;margin-bottom: 8px;font-family: SimHei">本年总收益</a-col>
+                  <a-col :span="24" style="font-size: 13px;margin-bottom: 8px;font-family: SimHei">本年总单量</a-col>
                   <a-col :span="4"><a-icon type="arrow-up" style="font-size: 30px;margin-top: 3px"/></a-col>
                   <a-col :span="18" style="font-size: 28px;font-weight: 500;font-family: SimHei">
                     {{ titleData.totalPrice }}
@@ -110,7 +110,7 @@
         <a-col :span="24">
           <a-card hoverable :bordered="false" style="width: 100%">
             <a-skeleton active v-if="chartLoading" />
-            <p v-if="!chartLoading" style="font-weight: 650;font-size: 15px;margin-bottom: 8px;font-family: SimHei">12月内订单收益统计</p>
+            <p v-if="!chartLoading" style="font-weight: 650;font-size: 15px;margin-bottom: 8px;font-family: SimHei">12月内订单单量统计</p>
             <apexchart v-if="!chartLoading" type="line" height="350" :options="chartOptions" :series="series"></apexchart>
           </a-card>
         </a-col>
@@ -160,7 +160,7 @@ export default {
       chartLoading: false,
       checkFlag: '1',
       series: [{
-        name: '收益',
+        name: '单量',
         data: [34, 44, 54, 21, 12, 43, 33, 23, 66, 66, 58]
       }],
       chartOptions: {

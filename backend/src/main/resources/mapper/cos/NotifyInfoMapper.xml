@@ -49,19 +49,20 @@
     <!-- 根据用户ID获取消息通知信息 -->
     <select id="queryNotifyByUser" resultType="java.util.LinkedHashMap">
         select ni.id,
+               ni.user_id,
                ni.user_code,
                ni.content,
                ni.del_flag,
                ni.create_date,
                ni.name,
-               ui.name   as userName,
-               ui.phone  as userPhone,
-               ui.images as userImages
+               si.code   as staffCode,
+               si.name   as staffName,
+               si.images as staffImages
         from notify_info ni
-                 left join user_info ui on
-            (ui.code = ni.user_code)
+                 left join staff_info si on (si.id = ni.staff_id)
         where 1 = 1
-          AND ui.id = #{userId}
+          AND si.user_id = #{userId}
+        AND ni.del_flag = '0'
         order by ni.create_date desc
     </select>
 </mapper>

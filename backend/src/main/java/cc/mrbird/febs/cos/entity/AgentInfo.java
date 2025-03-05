@@ -62,4 +62,5 @@ public class AgentInfo implements Serializable {
 
     @TableField(exist = false)
     private String staffName;
+    private String type;
 }

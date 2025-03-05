@@ -147,6 +147,16 @@ export default {
         ellipsis: true,
         dataIndex: 'enterpriseName'
       }, {
+        title: '主办方',
+        ellipsis: true,
+        dataIndex: 'organizer'
+      }, {
+        title: '会议特性',
+        dataIndex: 'status',
+        customRender: (text, row, index) => {
+          return <a-tag>{{ text }}</a-tag>
+        }
+      }, {
         title: '会议标题',
         ellipsis: true,
         dataIndex: 'title'

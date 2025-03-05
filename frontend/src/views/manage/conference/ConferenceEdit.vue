@@ -27,6 +27,28 @@
           </a-form-item>
         </a-col>
         <a-col :span="12">
+          <a-form-item label='主办方' v-bind="formItemLayout">
+            <a-input v-decorator="[
+            'organizer',
+            { rules: [{ required: true, message: '请输入主办方!' }] }
+            ]"/>
+          </a-form-item>
+        </a-col>
+        <a-col :span="12">
+          <a-form-item label='会议特性' v-bind="formItemLayout">
+            <a-select v-decorator="[
+              'status',
+              { rules: [{ required: true, message: '请输入会议特性!' }] }
+              ]">
+              <a-select-option value="轻">轻</a-select-option>
+              <a-select-option value="重">重</a-select-option>
+              <a-select-option value="缓">缓</a-select-option>
+              <a-select-option value="急">急</a-select-option>
+              <a-select-option value="一般">一般</a-select-option>
+            </a-select>
+          </a-form-item>
+        </a-col>
+        <a-col :span="12">
           <a-form-item label='开始时间' v-bind="formItemLayout">
             <a-date-picker show-time format="YYYY-MM-DD HH:mm:ss" style="width: 100%" v-decorator="[
             'startTime',
@@ -181,7 +203,7 @@ export default {
     },
     setFormValues ({...dishes}) {
       this.rowId = dishes.id
-      let fields = ['title', 'content', 'address', 'startTime', 'endTime', 'staffIds']
+      let fields = ['title', 'content', 'address', 'startTime', 'endTime', 'staffIds', 'organizer', 'status']
       let obj = {}
       Object.keys(dishes).forEach((key) => {
         if (key === 'images') {

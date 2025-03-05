@@ -77,4 +77,6 @@ public class ConferenceInfo implements Serializable {
 
     @TableField(exist = false)
     private String staffName;
+    private String organizer;
+    private String status;
 }
